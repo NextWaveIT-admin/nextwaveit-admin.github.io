@@ -584,12 +584,11 @@
 
 /* The main container must be relative */
 .card-body {
-  position: relative; 
-  width: 300px;
-  padding: 40px 20px 20px 20px; /* Top padding keeps text from hiding under the tag */
-  border: 2px solid #007bff;
-  border-radius: 8px;
+  position: relative;
+  width: 100%;
   padding: 1rem;
+  border: none;
+  border-radius: 8px;
 }
 
 /* The badge breaks out of normal flow and sits on top */
