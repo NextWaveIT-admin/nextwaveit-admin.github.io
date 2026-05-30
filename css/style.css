@@ -582,6 +582,53 @@
 }
 /*** Blog End ***/
 
+/* The main container must be relative */
+.card-body {
+  position: relative; 
+  width: 300px;
+  padding: 40px 20px 20px 20px; /* Top padding keeps text from hiding under the tag */
+  border: 2px solid #007bff;
+  border-radius: 8px;
+}
+
+/* The badge breaks out of normal flow and sits on top */
+.popular-tag {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Centers the badge perfectly on the top border line */
+  background-color: #007bff;
+  color: white;
+  padding: 4px 12px;
+  font-size: 12px;
+  font-weight: bold;
+  text-transform: uppercase;
+  border-radius: 20px;
+  white-space: nowrap;
+}
+
+
+/*** Checkmark list start ***/
+ul.checkmark-list {
+  list-style-type: none; /* Removes the default black dots */
+  padding-left: 20px;    /* Adds space where the dots used to be */
+}
+
+ul.checkmark-list li {
+  position: relative;    /* Context for absolute placement if needed */
+  margin-bottom: 8px;    /* Adds clean spacing between items */
+}
+
+ul.checkmark-list li::before {
+  content: "✓";          /* Inserts the checkmark symbol */
+  color: #2cba6c;        /* Colors the checkmark green */
+  font-weight: bold;     /* Makes the checkmark stand out */
+  display: inline-block; 
+  width: 1em;            /* Allocates fixed spacing for the icon */
+  margin-left: -1em;     /* Pulls the icon into the left padding area */
+}
+/*** Checkmark list end ***/
+
 
 /*** FAQs Start ***/
 .faq-section .accordion .accordion-item .accordion-header .accordion-button {
