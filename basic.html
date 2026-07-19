@@ -216,6 +216,56 @@
                     <label for="address">Address*</label>
                     <input class="form-control" type="text" id="address" name="address" required>
 
+                    <hr style="margin: 30px 0;">
+                    <h5 style="color:#2D3D4A; font-weight:700; margin-bottom:5px;">Current Network Environment</h5>
+                    <p class="mb-4" style="font-size: 0.9rem; color:#5a6b78;">Understanding your current network environment helps us tailor managed services to your specific needs, identify potential risks, and ensure seamless integration with your existing infrastructure.</p>
+
+                    <label>Current Network Environment*</label>
+                    <div class="mb-3">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="network_environment" value="I know about the current network environment" id="net1" required>
+                            <label class="form-check-label" for="net1">I know about the current network environment</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="network_environment" value="I know some about the current network environment" id="net2" required>
+                            <label class="form-check-label" for="net2">I know some about the current network environment</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="network_environment" value="I don't know about the current network environment" id="net3" required>
+                            <label class="form-check-label" for="net3">I don't know about the current network environment</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="network_environment" value="Other" id="net4" required>
+                            <label class="form-check-label" for="net4">Other:</label>
+                        </div>
+                        <input class="form-control mt-2" type="text" name="network_environment_other" placeholder="Please specify">
+                    </div>
+
+                    <label for="workstation_count">How many workstations are in the environment? (PCs, laptops, POS, etc.)*</label>
+                    <input class="form-control" type="number" min="0" id="workstation_count" name="workstation_count" required>
+
+                    <label for="firewall">Do you have a firewall in place? If so, what brand and who currently manages it?</label>
+                    <input class="form-control" type="text" id="firewall" name="firewall">
+
+                    <label for="server_count">How many servers are in the environment? (File server, virtual server, domain controller, etc.)*</label>
+                    <input class="form-control" type="number" min="0" id="server_count" name="server_count" required>
+
+                    <label>Do you provide mobile/desk phones, tablets, or other equipment?*</label>
+                    <div class="mb-3">
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="provides_equipment" value="Yes" id="equip_yes" required>
+                            <label class="form-check-label" for="equip_yes">Yes</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="provides_equipment" value="No" id="equip_no" required>
+                            <label class="form-check-label" for="equip_no">No</label>
+                        </div>
+                        <input class="form-control mt-2" type="text" name="provides_equipment_other" placeholder="Other (please specify)">
+                    </div>
+
+                    <label for="equipment_count">If so, how many?</label>
+                    <input class="form-control" type="number" min="0" id="equipment_count" name="equipment_count">
+
                     <button type="submit">Submit Inquiry</button>
 
                     <p id="form-success-msg">Thanks — your inquiry has been sent. We'll be in touch shortly.</p>
