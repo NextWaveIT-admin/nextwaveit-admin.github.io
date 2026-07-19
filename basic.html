@@ -241,8 +241,11 @@
                         <input class="form-control mt-2" type="text" name="network_environment_other" placeholder="Please specify">
                     </div>
 
+                    <label for="workstation_count">How many Users are in the environment? (Including yourself)*</label>
+                    <input class="form-control" type="number" min="1" id="user_count" name="user_count" required>
+
                     <label for="workstation_count">How many workstations are in the environment? (PCs, laptops, POS, etc.)*</label>
-                    <input class="form-control" type="number" min="0" id="workstation_count" name="workstation_count" required>
+                    <input class="form-control" type="number" min="1" id="workstation_count" name="workstation_count" required>
 
                     <label for="firewall">Do you have a firewall in place? If so, what brand and who currently manages it?</label>
                     <input class="form-control" type="text" id="firewall" name="firewall">
