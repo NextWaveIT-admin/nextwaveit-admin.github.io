@@ -31,6 +31,71 @@
 
         <!-- Template Stylesheet -->
         <link href="css/style.css" rel="stylesheet">
+
+        <!-- Basic Plan Inquiry Form Styles -->
+        <style>
+            .inquiry-form-wrap {
+                max-width: 640px;
+                margin: 0 auto;
+                padding: 40px 35px;
+                background: #ffffff;
+                border-radius: 6px;
+                box-shadow: 0 0 45px rgba(0, 0, 0, 0.08);
+            }
+            .inquiry-form-wrap h4 {
+                color: #2D3D4A;
+                font-weight: 700;
+                margin-bottom: 5px;
+            }
+            .inquiry-form-wrap .price-line {
+                color: #2D6096;
+                font-weight: 600;
+                font-size: 1.1rem;
+                margin-bottom: 25px;
+            }
+            .inquiry-form-wrap label {
+                font-weight: 600;
+                color: #2D3D4A;
+                margin-bottom: 6px;
+                display: block;
+            }
+            .inquiry-form-wrap .form-control {
+                border: 1px solid #d9e2ea;
+                border-radius: 4px;
+                padding: 12px 15px;
+                margin-bottom: 20px;
+                width: 100%;
+            }
+            .inquiry-form-wrap .form-control:focus {
+                border-color: #2D6096;
+                outline: none;
+                box-shadow: 0 0 0 3px rgba(45, 96, 150, 0.15);
+            }
+            .inquiry-form-wrap button[type="submit"] {
+                background-color: #2D6096;
+                border: none;
+                color: #fff;
+                font-weight: 600;
+                padding: 12px 35px;
+                border-radius: 50px;
+                transition: background-color 0.2s ease-in-out;
+            }
+            .inquiry-form-wrap button[type="submit"]:hover {
+                background-color: #006699;
+            }
+            #form-success-msg {
+                display: none;
+                color: #1e7e34;
+                font-weight: 600;
+                margin-top: 15px;
+            }
+            #form-error-msg {
+                display: none;
+                color: #c0392b;
+                font-weight: 600;
+                margin-top: 15px;
+            }
+        </style>
     </head>
 
     <body>
@@ -108,11 +173,11 @@
             <!-- Header Start -->
             <div class="container-fluid bg-breadcrumb">
                 <div class="container text-center py-5" style="max-width: 900px;">
-                    <h4 class="text-white display-4 mb-4 wow fadeInDown" data-wow-delay="0.1s">Basic Plan</h4>
+                    <h4 class="text-white display-4 mb-4 wow fadeInDown" data-wow-delay="0.1s">Plus Plan</h4>
                     <ol class="breadcrumb d-flex justify-content-center mb-0 wow fadeInDown" data-wow-delay="0.3s">
                         <li class="breadcrumb-item"><a href="index.html">Home</a></li>
                         <li class="breadcrumb-item"><a href="#">Pages</a></li>
-                        <li class="breadcrumb-item active text-primary">Basic Plan</li>
+                        <li class="breadcrumb-item active text-primary">Plus Plan</li>
                     </ol>    
                 </div>
             </div>
@@ -120,10 +185,158 @@
         </div>
         <!-- Navbar & Hero End -->
 
-        <div style="display: flex; justify-content: center; align-items: center;">
-            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfEZCgo5nBMAjj1SqHQoRluTzS4BIdkhmG-Gcvq6_n0Ff716w/viewform?embedded=true" width="640" height="1887" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+        <!-- Basic Plan Inquiry Form Start -->
+        <div class="container-fluid py-5">
+            <div class="inquiry-form-wrap">
+                <h4>Plus Plan Inquiry</h4>
+                <p class="price-line">$44.99 per workstation / month</p>
+                <p class="mb-4">Basic info to get in contact with you about your inquiry.</p>
+
+                <form id="plusPlanForm" action="https://api.web3forms.com/submit" method="POST">
+                    <!-- Replace with your Web3Forms Access Key -->
+                    <input type="hidden" name="access_key" value="YOUR-ACCESS-KEY-HERE">
+                    <input type="hidden" name="subject" value="New Plus Plan Inquiry - TheNextWaveIT.com">
+                    <input type="hidden" name="plan" value="Plus Plan - $44.99/workstation/month">
+
+                    <!-- Honeypot spam trap -->
+                    <input type="checkbox" name="botcheck" style="display: none;">
+
+                    <label for="name">Name*</label>
+                    <input class="form-control" type="text" id="name" name="name" required>
+
+                    <label for="email">Email*</label>
+                    <input class="form-control" type="email" id="email" name="email" required>
+
+                    <label for="phone">Phone*</label>
+                    <input class="form-control" type="tel" id="phone" name="phone" required>
+
+                    <label for="company">Company</label>
+                    <input class="form-control" type="text" id="company" name="company">
+
+                    <label for="address">Address*</label>
+                    <input class="form-control" type="text" id="address" name="address" required>
+
+                    <hr style="margin: 30px 0;">
+                    <h5 style="color:#2D3D4A; font-weight:700; margin-bottom:5px;">Current Network Environment</h5>
+                    <p class="mb-4" style="font-size: 0.9rem; color:#5a6b78;">Understanding your current network environment helps us tailor managed services to your specific needs, identify potential risks, and ensure seamless integration with your existing infrastructure.</p>
+
+                    <label>Current Network Environment*</label>
+                    <div class="mb-3">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="network_environment" value="I know about the current network environment" id="net1" required>
+                            <label class="form-check-label" for="net1">I know about the current network environment</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="network_environment" value="I know some about the current network environment" id="net2" required>
+                            <label class="form-check-label" for="net2">I know some about the current network environment</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="network_environment" value="I don't know about the current network environment" id="net3" required>
+                            <label class="form-check-label" for="net3">I don't know about the current network environment</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="network_environment" value="Other" id="net4" required>
+                            <label class="form-check-label" for="net4">Other:</label>
+                        </div>
+                        <input class="form-control mt-2" type="text" name="network_environment_other" placeholder="Please specify">
+                    </div>
+
+                    <label for="workstation_count">How many workstations are in the environment? (PCs, laptops, POS, etc.)*</label>
+                    <input class="form-control" type="number" min="0" id="workstation_count" name="workstation_count" required>
+
+                    <label for="firewall">Do you have a firewall in place? If so, what brand and who currently manages it?</label>
+                    <input class="form-control" type="text" id="firewall" name="firewall">
+
+                    <label>How many servers are in the environment? (File server, virtual server, domain controller, etc.)*</label>
+                    <div class="mb-3">
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="server_count" value="0" id="srv0" required>
+                            <label class="form-check-label" for="srv0">0</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="server_count" value="1" id="srv1" required>
+                            <label class="form-check-label" for="srv1">1</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="server_count" value="2" id="srv2" required>
+                            <label class="form-check-label" for="srv2">2</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="server_count" value="3" id="srv3" required>
+                            <label class="form-check-label" for="srv3">3</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="server_count" value="4" id="srv4" required>
+                            <label class="form-check-label" for="srv4">4</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="server_count" value="Other" id="srvOther" required>
+                            <label class="form-check-label" for="srvOther">Other:</label>
+                        </div>
+                        <input class="form-control mt-2" type="text" name="server_count_other" placeholder="Please specify">
+                    </div>
+
+                    <label>Do you provide mobile/desk phones, tablets, or other equipment?*</label>
+                    <div class="mb-3">
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="provides_equipment" value="Yes" id="equip_yes" required>
+                            <label class="form-check-label" for="equip_yes">Yes</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="provides_equipment" value="No" id="equip_no" required>
+                            <label class="form-check-label" for="equip_no">No</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="provides_equipment" value="Other" id="equip_other" required>
+                            <label class="form-check-label" for="equip_other">Other:</label>
+                        </div>
+                        <input class="form-control mt-2" type="text" name="provides_equipment_other" placeholder="Please specify">
+                    </div>
+
+                    <label for="equipment_count">If so, how many?</label>
+                    <input class="form-control" type="text" id="equipment_count" name="equipment_count">
+
+                    <label>What service do you use for Email*</label>
+                    <div class="mb-3">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="email_service" value="Office 365" id="email1" required>
+                            <label class="form-check-label" for="email1">Office 365</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="email_service" value="Google Workspace" id="email2" required>
+                            <label class="form-check-label" for="email2">Google Workspace</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="email_service" value="Other" id="email3" required>
+                            <label class="form-check-label" for="email3">Other:</label>
+                        </div>
+                        <input class="form-control mt-2" type="text" name="email_service_other" placeholder="Please specify">
+                    </div>
+
+                    <label>What additional service would you like?*</label>
+                    <div class="mb-3">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="additional_service" value="Email Filtering" id="addsvc1">
+                            <label class="form-check-label" for="addsvc1">Email Filtering</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="additional_service" value="Phishing Training" id="addsvc2">
+                            <label class="form-check-label" for="addsvc2">Phishing Training</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="additional_service" value="I'm Not Sure" id="addsvc3">
+                            <label class="form-check-label" for="addsvc3">I'm Not Sure</label>
+                        </div>
+                    </div>
+
+                    <button type="submit">Submit Inquiry</button>
+
+                    <p id="form-success-msg">Thanks — your inquiry has been sent. We'll be in touch shortly.</p>
+                    <p id="form-error-msg">Something went wrong. Please try again or email us directly at help@thenextwaveit.com.</p>
+                </form>
+            </div>
         </div>
-              
+        <!-- Basic Plan Inquiry Form End -->
 
         <!-- Footer Start -->
         <div class="container-fluid footer py-5 wow fadeIn" data-wow-delay="0.2s">
@@ -198,8 +411,8 @@
                         <span class="text-body"><a href="#" class="border-bottom text-white"><i class="fas fa-copyright text-light me-2"></i>NextWave Technologies</a>, All right reserved.</span>
                     </div>
                     <div class="col-md-6 text-center text-md-end text-body">
-                        <!--/*** This template is free as long as you keep the below author’s credit link/attribution link/backlink. ***/-->
-                        <!--/*** If you'd like to use the template without the below author’s credit link/attribution link/backlink, ***/-->
+                        <!--/*** This template is free as long as you keep the below author's credit link/attribution link/backlink. ***/-->
+                        <!--/*** If you'd like to use the template without the below author's credit link/attribution link/backlink, ***/-->
                         <!--/*** you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". ***/-->
                         Designed By <a class="border-bottom text-white" href="https://htmlcodex.com">HTML Codex</a> Distributed By <a class="border-bottom text-white" href="https://themewagon.com">ThemeWagon</a>
                     </div>
@@ -225,6 +438,46 @@
 
         <!-- Template Javascript -->
         <script src="js/main.js"></script>
+
+        <!-- Plus Plan Form AJAX Submission -->
+        <script>
+            const plusPlanForm = document.getElementById('plusPlanForm');
+            const successMsg = document.getElementById('form-success-msg');
+            const errorMsg = document.getElementById('form-error-msg');
+
+            plusPlanForm.addEventListener('submit', function (e) {
+                e.preventDefault();
+                successMsg.style.display = 'none';
+                errorMsg.style.display = 'none';
+
+                const formData = new FormData(plusPlanForm);
+                const object = Object.fromEntries(formData);
+                const json = JSON.stringify(object);
+
+                fetch('https://api.web3forms.com/submit', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json'
+                    },
+                    body: json
+                })
+                .then(async (response) => {
+                    let jsonResponse = await response.json();
+                    if (response.status == 200) {
+                        successMsg.style.display = 'block';
+                        plusPlanForm.reset();
+                    } else {
+                        console.log(jsonResponse);
+                        errorMsg.style.display = 'block';
+                    }
+                })
+                .catch((error) => {
+                    console.log(error);
+                    errorMsg.style.display = 'block';
+                });
+            });
+        </script>
     </body>
 
 </html>
