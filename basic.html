@@ -241,17 +241,40 @@
                         <input class="form-control mt-2" type="text" name="network_environment_other" placeholder="Please specify">
                     </div>
 
-                    <label for="workstation_count">How many Users are in the environment? (Including yourself)*</label>
-                    <input class="form-control" type="number" min="1" id="user_count" name="user_count" required>
-
                     <label for="workstation_count">How many workstations are in the environment? (PCs, laptops, POS, etc.)*</label>
                     <input class="form-control" type="number" min="1" id="workstation_count" name="workstation_count" required>
 
                     <label for="firewall">Do you have a firewall in place? If so, what brand and who currently manages it?</label>
                     <input class="form-control" type="text" id="firewall" name="firewall">
 
-                    <label for="server_count">How many servers are in the environment? (File server, virtual server, domain controller, etc.)*</label>
-                    <input class="form-control" type="number" min="0" id="server_count" name="server_count" required>
+                    <label>How many servers are in the environment? (File server, virtual server, domain controller, etc.)*</label>
+                    <div class="mb-3">
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="server_count" value="0" id="srv0" required>
+                            <label class="form-check-label" for="srv0">0</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="server_count" value="1" id="srv1" required>
+                            <label class="form-check-label" for="srv1">1</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="server_count" value="2" id="srv2" required>
+                            <label class="form-check-label" for="srv2">2</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="server_count" value="3" id="srv3" required>
+                            <label class="form-check-label" for="srv3">3</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="server_count" value="4" id="srv4" required>
+                            <label class="form-check-label" for="srv4">4</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="server_count" value="Other" id="srvOther" required>
+                            <label class="form-check-label" for="srvOther">Other:</label>
+                        </div>
+                        <input class="form-control mt-2" type="text" name="server_count_other" placeholder="Please specify">
+                    </div>
 
                     <label>Do you provide mobile/desk phones, tablets, or other equipment?*</label>
                     <div class="mb-3">
@@ -263,11 +286,32 @@
                             <input class="form-check-input" type="radio" name="provides_equipment" value="No" id="equip_no" required>
                             <label class="form-check-label" for="equip_no">No</label>
                         </div>
-                        <input class="form-control mt-2" type="text" name="provides_equipment_other" placeholder="Other (please specify)">
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="provides_equipment" value="Other" id="equip_other" required>
+                            <label class="form-check-label" for="equip_other">Other:</label>
+                        </div>
+                        <input class="form-control mt-2" type="text" name="provides_equipment_other" placeholder="Please specify">
                     </div>
 
                     <label for="equipment_count">If so, how many?</label>
-                    <input class="form-control" type="number" min="0" id="equipment_count" name="equipment_count">
+                    <input class="form-control" type="text" id="equipment_count" name="equipment_count">
+
+                    <label>What service do you use for Email*</label>
+                    <div class="mb-3">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="email_service" value="Office 365" id="email1" required>
+                            <label class="form-check-label" for="email1">Office 365</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="email_service" value="Google Workspace" id="email2" required>
+                            <label class="form-check-label" for="email2">Google Workspace</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="email_service" value="Other" id="email3" required>
+                            <label class="form-check-label" for="email3">Other:</label>
+                        </div>
+                        <input class="form-control mt-2" type="text" name="email_service_other" placeholder="Please specify">
+                    </div>
 
                     <button type="submit">Submit Inquiry</button>
 
